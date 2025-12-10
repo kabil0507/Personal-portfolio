@@ -29,7 +29,6 @@ h2 {
   color: #1a1a2e;
 }
 
-/* Header & Navigation */
 header {
   background: #1a1a2e;
   color: white;
@@ -77,7 +76,7 @@ nav {
   color: #e43f5a;
 }
 
-/* Hamburger Menu */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -163,7 +162,7 @@ nav {
   box-shadow: 0 10px 20px rgba(228, 63, 90, 0.4);
 }
 
-/* About Section */
+
 .about {
   background: white;
   border-radius: 15px;
@@ -181,7 +180,7 @@ nav {
   color: #555;
 }
 
-/* Skills Section */
+
 .skills {
   background: transparent;
 }
@@ -210,7 +209,6 @@ nav {
   box-shadow: 0 10px 25px rgba(31, 64, 104, 0.3);
 }
 
-/* Projects Section */
 .projects {
   background: white;
   border-radius: 15px;
@@ -218,7 +216,6 @@ nav {
 }
 
 .project-grid {
-  /* This uses auto-fit/minmax for desktop, which is great for scaling */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
@@ -285,7 +282,6 @@ nav {
   background: #e43f5a;
 }
 
-/* Contact Section */
 .contact {
   background: transparent;
   text-align: center;
@@ -351,7 +347,6 @@ button:hover {
   color: #1f4068;
 }
 
-/* Footer */
 footer {
   background: #1a1a2e;
   color: white;
@@ -363,7 +358,6 @@ footer p {
   opacity: 0.8;
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -397,7 +391,6 @@ footer p {
   transform: translateY(0);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   /* Navigation Menu */
   .nav-links {
@@ -430,7 +423,6 @@ footer p {
     display: flex;
   }
 
-  /* Projects Grid - Explicitly set to 1 column for smaller screens */
   .project-grid {
     grid-template-columns: 1fr;
   }
