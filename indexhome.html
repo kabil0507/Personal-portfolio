@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kabil - Portfolio</title>
+  <meta name="description" content="Kabil - Front-End Developer portfolio. I build responsive and interactive web applications.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Poppins Font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Custom styles for animations, since keyframes are not native Tailwind utilities */
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Custom Hero Gradient Background */
+    .hero-bg {
+      background: linear-gradient(135deg, #162447 0%, #1a1a2e 50%, #1f4068 100%);
+    }
+
+    /* Hamburger Animation States */
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Keyframe Animations (Retained from original CSS) */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Custom Animation Classes for Intersection Observer */
+    .custom-animate-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .custom-animate-section.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Hero element animations */
+    .hero h1 { animation: fadeInUp 0.8s ease forwards; }
+    .hero p { animation: fadeInUp 0.8s ease 0.2s forwards; opacity: 0; }
+    .hero .btn { animation: fadeInUp 0.8s ease 0.4s forwards; opacity: 0; }
+    .hero-photo { animation: fadeInScale 0.8s ease forwards; }
+
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+  <header class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold text-red-600">Kabil</div>
+      
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links hidden md:flex space-x-2">
+        <li><a href="#home" class="font-medium p-2 px-3 rounded-lg transition-colors duration-300 hover:bg-red-600 hover:text-white">Home</a></li>
+        <li><a href="#about" class="font-medium p-2 px-3 rounded-lg transition-colors duration-300 hover:bg-red-600 hover:text-white">About</a></li>
+        <li><a href="#skills" class="font-medium p-2 px-3 rounded-lg transition-colors duration-300 hover:bg-red-600 hover:text-white">Skills</a></li>
+        <li><a href="#projects" class="font-medium p-2 px-3 rounded-lg transition-colors duration-300 hover:bg-red-600 hover:text-white">Projects</a></li>
+        <li><a href="#contact" class="font-medium p-2 px-3 rounded-lg transition-colors duration-300 hover:bg-red-600 hover:text-white">Contact</a></li>
+      </ul>
+      
+      <!-- Hamburger Menu -->
+      <div class="hamburger flex md:hidden flex-col cursor-pointer space-y-1.5 p-1">
+        <div class="w-6 h-0.5 bg-white rounded transition-all duration-300"></div>
+        <div class="w-6 h-0.5 bg-white rounded transition-all duration-300"></div>
+        <div class="w-6 h-0.5 bg-white rounded transition-all duration-300"></div>
+      </div>
+      
+      <!-- Mobile Navigation Links (Hidden by default, toggled by JS) -->
+      <ul class="nav-links absolute top-16 right-4 bg-gray-900 flex-col w-48 p-4 rounded-xl shadow-2xl hidden md:hidden space-y-2">
+        <li><a href="#home" class="block p-3 rounded-lg transition-colors duration-300 hover:bg-gray-700 hover:text-red-500">Home</a></li>
+        <li><a href="#about" class="block p-3 rounded-lg transition-colors duration-300 hover:bg-gray-700 hover:text-red-500">About</a></li>
+        <li><a href="#skills" class="block p-3 rounded-lg transition-colors duration-300 hover:bg-gray-700 hover:text-red-500">Skills</a></li>
+        <li><a href="#projects" class="block p-3 rounded-lg transition-colors duration-300 hover:bg-gray-700 hover:text-red-500">Projects</a></li>
+        <li><a href="#contact" class="block p-3 rounded-lg transition-colors duration-300 hover:bg-gray-700 hover:text-red-500">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero hero-bg flex flex-col items-center justify-center min-h-[80vh] text-white text-center p-8 custom-animate-section">
+    <img src="IMG_2171 copy.JPG" alt="Kabil Photo" class="hero-photo w-40 h-40 md:w-48 md:h-48 rounded-full object-cover mb-6 border-4 border-red-600 shadow-xl shadow-red-600/30">
+    <h1 class="text-3xl md:text-5xl font-extrabold mb-4">Hi, I'm Kabil</h1>
+    <p class="text-lg md:text-xl opacity-90">Front-End Developer | I build responsive and interactive web apps</p>
+    <a href="#projects" class="btn inline-block mt-8 py-3 px-8 bg-red-600 text-white rounded-full font-semibold transition-all duration-300 hover:bg-red-700 hover:scale-105 shadow-xl hover:shadow-red-600/50">View My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about bg-white rounded-xl shadow-2xl -mt-10 relative z-10 p-10 md:p-12 max-w-6xl mx-auto custom-animate-section">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8">About Me</h2>
+    <p class="text-base md:text-lg text-center max-w-3xl mx-auto text-gray-600">Hello! I'm Kabil, a passionate front-end developer learning modern web technologies. I enjoy building web applications that are fast, responsive, and user-friendly.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills py-16 md:py-20 max-w-6xl mx-auto custom-animate-section">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-10">My Skills</h2>
+    <div class="skill-list flex flex-wrap gap-4 justify-center">
+      <div class="skill-card bg-white p-4 px-6 rounded-lg font-medium shadow-lg transition-all duration-300 cursor-default hover:bg-blue-800 hover:text-white hover:shadow-xl hover:scale-[1.03]">HTML</div>
+      <div class="skill-card bg-white p-4 px-6 rounded-lg font-medium shadow-lg transition-all duration-300 cursor-default hover:bg-blue-800 hover:text-white hover:shadow-xl hover:scale-[1.03]">CSS</div>
+      <div class="skill-card bg-white p-4 px-6 rounded-lg font-medium shadow-lg transition-all duration-300 cursor-default hover:bg-blue-800 hover:text-white hover:shadow-xl hover:scale-[1.03]">JavaScript</div>
+      <div class="skill-card bg-white p-4 px-6 rounded-lg font-medium shadow-lg transition-all duration-300 cursor-default hover:bg-blue-800 hover:text-white hover:shadow-xl hover:scale-[1.03]">React.js</div>
+      <div class="skill-card bg-white p-4 px-6 rounded-lg font-medium shadow-lg transition-all duration-300 cursor-default hover:bg-blue-800 hover:text-white hover:shadow-xl hover:scale-[1.03]">Git/GitHub</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects bg-white rounded-xl shadow-2xl p-10 md:p-12 max-w-6xl mx-auto custom-animate-section">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-10">My Projects</h2>
+    <div class="project-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="project-card bg-gray-50 rounded-xl p-6 text-center transition-all duration-300 border border-gray-200 hover:scale-[1.03] hover:shadow-2xl hover:border-red-600">
+        <div class="project-placeholder text-5xl mb-4 block">🌤️</div>
+        <h3 class="text-xl font-bold mb-2 text-gray-900">Weather App</h3>
+        <p class="text-gray-600 mb-4 text-sm">Fetch weather data from API and display forecast.</p>
+        <a href="https://github.com/kabil/weather-app" target="_blank" class="project-link inline-block py-2 px-5 bg-blue-800 text-white rounded-full text-sm transition-colors duration-300 hover:bg-red-600">View Code</a>
+      </div>
+
+      <div class="project-card bg-gray-50 rounded-xl p-6 text-center transition-all duration-300 border border-gray-200 hover:scale-[1.03] hover:shadow-2xl hover:border-red-600">
+        <div class="project-placeholder text-5xl mb-4 block">✅</div>
+        <h3>To-Do App</h3>
+        <p class="text-gray-600 mb-4 text-sm">Interactive task manager with add, delete, and mark complete features.</p>
+        <a href="https://github.com/kabil/todo-app" target="_blank" class="project-link inline-block py-2 px-5 bg-blue-800 text-white rounded-full text-sm transition-colors duration-300 hover:bg-red-600">View Code</a>
+      </div>
+
+      <div class="project-card bg-gray-50 rounded-xl p-6 text-center transition-all duration-300 border border-gray-200 hover:scale-[1.03] hover:shadow-2xl hover:border-red-600">
+        <div class="project-placeholder text-5xl mb-4 block">💰</div>
+        <h3>Student Budget Manager</h3>
+        <p class="text-gray-600 mb-4 text-sm">Track income and expenses with visualization charts.</p>
+        <a href="https://github.com/kabil/budget-manager" target="_blank" class="project-link inline-block py-2 px-5 bg-blue-800 text-white rounded-full text-sm transition-colors duration-300 hover:bg-red-600">View Code</a>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact py-16 md:py-20 max-w-6xl mx-auto text-center custom-animate-section">
+    <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-10">Contact Me</h2>
+    <form id="contact-form" class="max-w-xl mx-auto flex flex-col space-y-4">
+      <input type="text" placeholder="Your Name" required class="p-4 rounded-xl border-2 border-gray-300 focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/10 transition duration-300">
+      <input type="email" placeholder="Your Email" required class="p-4 rounded-xl border-2 border-gray-300 focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/10 transition duration-300">
+      <textarea placeholder="Your Message" rows="5" required class="p-4 rounded-xl border-2 border-gray-300 focus:outline-none focus:border-red-600 focus:ring-4 focus:ring-red-600/10 transition duration-300"></textarea>
+      <button type="submit" class="py-4 bg-red-600 text-white font-semibold rounded-xl cursor-pointer transition-all duration-300 hover:bg-red-700 hover:scale-[1.01] shadow-lg hover:shadow-red-600/40">Send Message</button>
+    </form>
+    <div class="contact-info mt-8 text-gray-600">
+      <p class="mb-2">Email: <span class="font-medium text-red-600">your-email@example.com</span></p>
+      <p class="mb-2">LinkedIn: <a href="https://linkedin.com/in/kabil" target="_blank" class="text-red-600 hover:text-blue-800 transition-colors duration-300">linkedin.com/in/kabil</a></p>
+      <p>GitHub: <a href="https://github.com/kabil" target="_blank" class="text-red-600 hover:text-blue-800 transition-colors duration-300">github.com/kabil</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center p-6">
+    <p class="opacity-80">© 2025 Kabil. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        // Only hide if the menu is visible (mobile)
+        if (!navLinks.classList.contains('hidden')) {
+          navLinks.classList.add('hidden');
+          hamburger.classList.remove('active');
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Replaced alert() with console.log() as per guidelines
+      console.log('Message sent! Thank you for your message.');
+      this.reset();
+    });
+
+    // Scroll animations (Intersection Observer)
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        } else {
+          // Optional: remove class when scrolling away to re-trigger on return
+          // entry.target.classList.remove('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section:not(#home)').forEach(section => {
+      section.classList.add('custom-animate-section');
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
