@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kabil - Portfolio</title>
-  <meta name="description" content="Kabil - Front-End Developer portfolio. I build responsive and interactive web applications.">
+  <title>Kabilan Kularaththinam | Computer Science & Technology Undergraduate</title>
+  <meta name="description" content="Personal portfolio of Kabilan Kularaththinam, a Computer Science and Technology undergraduate passionate about web and full-stack development.">
+  <meta name="keywords" content="Kabilan Kularaththinam, Portfolio, Full-Stack Developer, Computer Science Undergraduate, Sri Lanka">
+  <meta property="og:title" content="Kabilan Kularaththinam | Portfolio">
+  <meta property="og:description" content="Personal portfolio of Kabilan Kularaththinam, a Computer Science and Technology undergraduate passionate about web and full-stack development.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Kabil</div>
+      <div class="logo">Kabilan</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -28,95 +36,242 @@
   </header>
 
   <section id="home" class="hero">
-    <img src="IMG_2171 copy.JPG" alt="Kabil Photo" class="hero-photo">
-    <h1>Hi, I'm Kabil</h1>
-    <p>Front-End Developer | I build responsive and interactive web apps</p>
-    <a href="#projects" class="btn">View My Work</a>
+    <img src="IMG_2171 copy.JPG" alt="Kabilan Photo" class="hero-photo">
+    <h1>Hi, I'm Kabilan</h1>
+    <p class="subtitle">Computer Science and Technology Undergraduate | Aspiring Full-Stack Developer</p>
+    <p class="hero-desc">Passionate about building practical web applications, solving real-world problems, and continuously learning modern technologies.</p>
+    
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#cv-placeholder" class="btn btn-outline" onclick="alert('CV placeholder link - Please add your actual CV file later.')">Download CV</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+
+    <div class="social-links">
+      <a href="https://github.com/kabil0507" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kabilan-kularaththinam-b90a50295/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
   </section>
 
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>Hi! I'm Kabil, a front-end developer and Java learner, currently exploring HTML, CSS, JavaScript, React.js, and OOP in Java. Passionate about building responsive and interactive web applications.</p>
+    <p>I’m a Computer Science and Technology undergraduate passionate about web and full-stack development. I enjoy building practical projects, solving problems, and learning new technologies. I have experience with JavaScript, Java, PHP, MySQL, Git, and web development, and I’m currently expanding my skills in React, TypeScript, and Node.js.</p>
+    <br>
+    <p>I am a fast learner, team player, and passionate about gaining real-world software development experience.</p>
   </section>
 
   <section id="skills" class="skills">
     <h2>My Skills</h2>
-    <div class="skill-list">
-      <div class="skill-card">HTML</div>
-      <div class="skill-card">CSS</div>
-      <div class="skill-card">JavaScript</div>
-      <div class="skill-card">Java</div>
-      <div class="skill-card">MySQL</div>
-      <div class="skill-card">Git/GitHub</div>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Frontend</h3>
+        <div class="skill-list">
+          <div class="skill-card">HTML5</div>
+          <div class="skill-card">CSS3</div>
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">Responsive Web Design</div>
+          <div class="skill-card">Bootstrap</div>
+          <div class="skill-card">Tailwind CSS</div>
+          <div class="skill-card learning">React.js (Learning)</div>
+          <div class="skill-card learning">TypeScript (Learning)</div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3>Backend</h3>
+        <div class="skill-list">
+          <div class="skill-card">Java</div>
+          <div class="skill-card">PHP</div>
+          <div class="skill-card learning">Node.js (Learning)</div>
+          <div class="skill-card">RESTful API Concepts</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Database</h3>
+        <div class="skill-list">
+          <div class="skill-card">MySQL</div>
+          <div class="skill-card">SQL</div>
+          <div class="skill-card">phpMyAdmin</div>
+          <div class="skill-card">Database Design</div>
+          <div class="skill-card">CRUD Operations</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Programming</h3>
+        <div class="skill-list">
+          <div class="skill-card">Java</div>
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">PHP</div>
+          <div class="skill-card">SQL</div>
+          <div class="skill-card">Object-Oriented Programming</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Tools</h3>
+        <div class="skill-list">
+          <div class="skill-card">Git & GitHub</div>
+          <div class="skill-card">VS Code</div>
+          <div class="skill-card">Vite</div>
+          <div class="skill-card">XAMPP</div>
+          <div class="skill-card">npm</div>
+          <div class="skill-card">Figma</div>
+          <div class="skill-card">PlantUML</div>
+          <div class="skill-card">Vercel</div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>AI-Assisted Development</h3>
+        <div class="skill-list">
+          <div class="skill-card">Antigravity</div>
+          <div class="skill-card">Claude</div>
+          <div class="skill-card">ChatGPT</div>
+          <div class="skill-card">Gemini</div>
+          <div class="skill-card">AI-assisted coding</div>
+          <div class="skill-card">Prompt-based development</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <div class="timeline-item">
+      <h3>BSc (Hons) in Computer Science and Technology</h3>
+      <h4>Uva Wellassa University of Sri Lanka</h4>
+      <p class="date">2022/2023 Batch — Currently Undergraduate</p>
+      <div class="coursework">
+        <strong>Relevant Coursework:</strong>
+        <ul>
+          <li>Web Application Development</li>
+          <li>Rapid Application Development</li>
+          <li>Object-Oriented Programming</li>
+          <li>Database Management Systems</li>
+          <li>Data Structures & Algorithms</li>
+          <li>Software Engineering</li>
+          <li>Compiler Design</li>
+          <li>Project Management</li>
+          <li>Quantitative Reasoning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="experience">
+    <h2>Experience</h2>
+    <div class="timeline-item">
+      <h3>Student Project Mentor</h3>
+      <h4>Yarl IT Hub — Puthiya Payanangal Program</h4>
+      <ul class="experience-list">
+        <li>Guided school students in developing and improving academic and technology-related projects.</li>
+        <li>Helped students understand project concepts and solve problems using practical approaches.</li>
+        <li>Provided guidance on project planning, implementation, and presentation.</li>
+        <li>Explained technical concepts clearly to students with different levels of technical knowledge.</li>
+        <li>Developed communication, mentoring, teamwork, leadership, and problem-solving skills.</li>
+      </ul>
     </div>
   </section>
 
   <section id="projects" class="projects">
-    <h2>My Projects</h2>
+    <h2>Projects</h2>
+    
+    <h3 class="section-subtitle">Featured Project</h3>
+    <div class="project-grid featured">
+      <div class="project-card featured-card">
+        <div class="project-placeholder"><i class="fas fa-car-side"></i></div>
+        <div class="project-content">
+          <h3>AccessRide</h3>
+          <h4>Smart Mobility Support Platform</h4>
+          <p>A web-based smart mobility support platform designed to improve transportation accessibility for people with visual disabilities. My main university project.</p>
+          <ul class="feature-list">
+            <li>Responsive web interface with Accessibility-focused UI</li>
+            <li>Passenger, Driver, and Admin roles</li>
+            <li>Voice-assisted interaction concepts & Emergency support</li>
+            <li>Ride management, OTP verification, Driver verification</li>
+          </ul>
+          <div class="tech-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>PHP</span><span>MySQL</span><span>Git</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/kabil0507" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section-subtitle">Other Projects</h3>
     <div class="project-grid">
       <div class="project-card">
-        <div class="project-placeholder"><img src="Dribbble-Logo.jpg"></div>
-        <h3>Dribble web</h3>
-        <p>Modern UI Portfolio Page crafted with HTML & Tailwind CSS</p><br>
-        <a href="https://github.com/kabil0507/Dribbble-web.git" target="_blank" class="project-link">View Code</a>
+        <div class="project-placeholder"><img src="homexlogo.jpg" alt="Home-X Builders"></div>
+        <h3>Home-X Builders</h3>
+        <p>A professional responsive website developed for a construction business with modern UI and mobile-friendly layout.</p>
+        <div class="tech-stack">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span><span>Vercel</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kabil0507/Home-X.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+          <a href="https://home-x-five.vercel.app/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        </div>
       </div>
 
       <div class="project-card">
-        <div class="project-placeholder"><img src="log.jpeg"></div>
-        <h3>Travellie.com</h3>
-        <p>A lightweight travel planning web built for effortless trip organization.</p><br>
-        <a href="https://github.com/kabil0507/Travellie.git" target="_blank" class="project-link">View Code</a>
+        <div class="project-placeholder"><img src="log.jpeg" alt="Travellie"></div>
+        <h3>Travellie</h3>
+        <p>A travel guide web application designed to provide users with destination information through an interactive and responsive interface.</p>
+        <div class="tech-stack">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kabil0507/Travellie.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+        </div>
       </div>
 
       <div class="project-card">
-        <div class="project-placeholder"><img src="oop logo.png"></div>
-        <h3>Student Grade System</h3>
-        <p>OOP Project 1.2 –Built with Java classes, objects, inheritance, and file handling.</p>
-        <a href="https://github.com/kabil0507/OOP-project-simple.git" target="_blank" class="project-link">View Code</a>
+        <div class="project-placeholder"><i class="fas fa-users-cog"></i></div>
+        <h3>Student Course Registration System</h3>
+        <p>A database-driven web application developed for student course registration with form validation and CRUD operations.</p>
+        <div class="tech-stack">
+          <span>PHP</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kabil0507" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+        </div>
       </div>
-
-      <div class="project-card">
-        <div class="project-placeholder"><img src="p-f logo.jpg"></div>
-        <h3>Personal Portfolio</h3>
-        <p>Personal Portfolio Website – A responsive, interactive portfolio built with HTML, CSS, and JavaScript.</p>
-        <a href="https://github.com/kabil0507/Personal-portfolio.git" target="_blank" class="project-link">View Code</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-placeholder"><img src="icon.png"></div>
-        <h3>To-do-list app</h3>
-        <p>A simple and interactive To-Do List web app built with JavaScript, HTML, and CSS.</p>
-        <a href="https://github.com/kabil0507/To-Do-list-app.git" target="_blank" class="project-link">View Code</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-placeholder"><img src="homexlogo.jpg"></div>
-        <h3>Home-X</h3>
-        <p>A responsive construction company website built using HTML, CSS, JavaScript, and JSON, designed to showcase services and projects with dynamic content handling.</p>
-        <a href="https://github.com/kabil0507/Home-X.git" target="_blank" class="project-link">View Code</a>
-      </div>
-
-
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="contact-info">
-      <p>Email: kulamkabil07@gamil.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/kabilan-kularaththinam-b90a50295" target="_blank">linkedin.com/in/kabil</a></p>
-      <p>GitHub: <a href="https://github.com/kabil0507" target="_blank">github.com/kabil</a></p>
+    <p class="contact-cta">Let's build something meaningful together.</p>
+    <div class="contact-container">
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <p>kulamkabil07@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <p><a href="https://www.linkedin.com/in/kabilan-kularaththinam-b90a50295/" target="_blank">LinkedIn Profile</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <p><a href="https://github.com/kabil0507" target="_blank">GitHub Profile</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Kabil. All rights reserved.</p>
+    <p>© 2026 Kabilan Kularaththinam. All rights reserved.</p>
   </footer>
 
   <script>
@@ -137,21 +292,21 @@
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
+        if(this.getAttribute('href') !== '#cv-placeholder') {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
         }
       });
     });
 
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-    
-      console.log('Message sent! Thank you for your message.');
+      alert('Message sent successfully!');
       this.reset();
     });
-
 
     const observerOptions = {
       threshold: 0.1,
