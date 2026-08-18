@@ -30,12 +30,15 @@ h2 {
 }
 
 header {
-  background: #1a1a2e;
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav {
@@ -112,10 +115,18 @@ nav {
   justify-content: center;
   min-height: 80vh;
   background: linear-gradient(135deg, #162447 0%, #1a1a2e 50%, #1f4068 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
   color: white;
   text-align: center;
   max-width: 100%;
   padding: 60px 20px;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero h1 {
@@ -225,12 +236,63 @@ nav {
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
 }
 
-.about p {
-  text-align: center;
-  max-width: 800px;
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  max-width: 900px;
   margin: auto;
-  font-size: 1.1rem;
+}
+
+.about-text {
+  flex: 2;
+  min-width: 250px;
+  text-align: left;
+  font-size: 1.05rem;
   color: #555;
+  line-height: 1.8;
+}
+
+.about-stats {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(228, 63, 90, 0.15);
+  border-color: #e43f5a;
+}
+
+.stat-card i {
+  font-size: 2.5rem;
+  color: #e43f5a;
+  margin-bottom: 10px;
+}
+
+.stat-card h3 {
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  margin-bottom: 5px;
+}
+
+.stat-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 /* Skills */
@@ -290,47 +352,85 @@ nav {
 
 /* Education & Experience */
 .education {
-  background: #f8f9fa;
+  background: #f5f7fa;
 }
 .experience {
-  background: transparent;
-}
-.timeline-item {
   background: white;
-  padding: 35px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.timeline-container {
+  position: relative;
   max-width: 800px;
   margin: 0 auto;
-  border-left: 5px solid #e43f5a;
-  transition: transform 0.3s ease;
+  padding: 20px 0;
 }
-.timeline-item:hover {
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: rgba(228, 63, 90, 0.3);
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  border-radius: 2px;
+}
+.timeline-item {
+  position: relative;
+  width: 100%;
+  padding-left: 70px;
+  margin-bottom: 30px;
+}
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 22px;
+  background-color: white;
+  border: 4px solid #e43f5a;
+  top: 25px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(228, 63, 90, 0.3);
+}
+.timeline-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+.timeline-content:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 35px rgba(228, 63, 90, 0.15);
+  border-color: rgba(228, 63, 90, 0.3);
 }
-.timeline-item h3 {
+.timeline-content h3 {
   color: #1a1a2e;
   margin-bottom: 5px;
   font-size: 1.4rem;
 }
-.timeline-item h4 {
+.timeline-content h4 {
   color: #e43f5a;
   margin-bottom: 10px;
   font-weight: 600;
   font-size: 1.1rem;
 }
-.timeline-item .date {
+.timeline-content .date {
   color: #777;
   font-size: 0.95rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-style: italic;
+  display: inline-block;
+  background: #f8f9fa;
+  padding: 5px 12px;
+  border-radius: 20px;
 }
 .coursework ul, .experience-list {
   list-style-position: outside;
   margin-left: 20px;
   margin-top: 15px;
   color: #555;
+  line-height: 1.6;
 }
 .coursework ul li, .experience-list li {
   margin-bottom: 8px;
@@ -365,7 +465,7 @@ nav {
 }
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(228, 63, 90, 0.15);
   border-color: #e43f5a;
 }
 .project-placeholder {
